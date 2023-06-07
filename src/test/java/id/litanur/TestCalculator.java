@@ -39,6 +39,20 @@ public class TestCalculator {
         String actualResult = result.getText();
         String expectedResult = "3";
         Assert.assertEquals(actualResult, expectedResult);
-
+    }
+    @Test
+    public void testMinus() {
+        MobileElement tombolSatu = driver.findElementByAccessibilityId("1");
+        MobileElement tombolDua = driver.findElementByAccessibilityId("2");
+        MobileElement tombolMinus = driver.findElementByAccessibilityId("minus");
+        MobileElement tombolSamaDengan = driver.findElementByAccessibilityId("equals");
+        tombolSatu.click();
+        tombolMinus.click();
+        tombolDua.click();
+        tombolSamaDengan.click();
+        MobileElement result = driver.findElementById("com.google.android.calculator:id/result_final");
+        String actualResult = result.getText();
+        String expectedResult = "−1";
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }
