@@ -13,3 +13,7 @@ Materi hari 20 kelas SQA batch 9 Juara Coding
 * untuk reboot device
 
 `adb shell am broadcast -a android.intent.action.BOOT_COMPLETED`
+
+* untuk shutdown device
+
+`adb shell reboot -p`
