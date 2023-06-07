@@ -1,7 +1,7 @@
 # TestCalculatorAppium
 Materi hari 20 kelas SQA batch 9 Juara Coding
 
-## Perintah - perintah yang sering digunakan
+## Perintah - perintah yang sering digunakan (untuk emulator)
 * untuk melihat package
 
 `adb shell pm list packages`
@@ -17,3 +17,9 @@ Materi hari 20 kelas SQA batch 9 Juara Coding
 * untuk shutdown device
 
 `adb shell reboot -p`
+
+* untuk restart adb
+
+`adb kill-server`
+
+`adb start-server`
