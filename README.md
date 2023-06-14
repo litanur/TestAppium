@@ -1,4 +1,4 @@
-# TestCalculatorAppium
+# Test Mobile Apps with Appium
 Materi hari 20 kelas SQA batch 9 Juara Coding
 
 ## Perintah - perintah yang sering digunakan (untuk emulator)
