@@ -23,3 +23,7 @@ Materi hari 20 kelas SQA batch 9 Juara Coding
 `adb kill-server`
 
 `adb start-server`
+
+* untuk mengetahui activity yang pertama kali dibuka oleh aplikasi dan mengakibatkan appium tidak dapat terhubung ke emulator
+
+`adb shell "cmd package resolve-activity --brief appPackage | tail -n 1"`
