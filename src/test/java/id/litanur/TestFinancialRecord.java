@@ -16,8 +16,8 @@ public class TestFinancialRecord {
     @BeforeClass
     public void setUp() throws MalformedURLException {
         DesiredCapabilities dc = new DesiredCapabilities();
-        dc.setCapability("deviceName", "sdk_gphone_x86");
-        dc.setCapability("udid", "emulator-5554");
+        dc.setCapability("deviceName", "Infinix X695C");
+        dc.setCapability("udid", "078002519I100200");
         dc.setCapability("platformName", "android");
         dc.setCapability("appPackage", "com.chad.financialrecord");
         dc.setCapability("appActivity", "com.rookie.catatankeuangan.feature.splash.SplashActivity");
@@ -64,6 +64,44 @@ public class TestFinancialRecord {
         System.out.println("Tambah data pemasukan berhasil");
     }
 
+    @Test
+    public void testAddOutcome() {
+        MobileElement addData = driver.findElementById("com.chad.financialrecord:id/fabMenu");
+        addData.click();
+        delay(5);
+        MobileElement calendar = driver.findElementById("com.chad.financialrecord:id/tvDate");
+        calendar.click();
+        delay(5);
+        MobileElement setDate = driver.findElementByAccessibilityId("05 Juni 2023");
+        setDate.click();
+        delay(5);
+        MobileElement okDate = driver.findElementById("android:id/button1");
+        okDate.click();
+        delay(5);
+        MobileElement categoryOption = driver.findElementById("com.chad.financialrecord:id/spCategory");
+        categoryOption.click();
+        delay(5);
+        MobileElement setCategory = driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[10]/android.widget.LinearLayout");
+        setCategory.click();
+        delay(5);
+        MobileElement setAmount = driver.findElementById("com.chad.financialrecord:id/etAmount");
+        setAmount.click();
+        setAmount.sendKeys("50000");
+        delay(5);
+        MobileElement note = driver.findElementById("com.chad.financialrecord:id/etNote");
+        note.click();
+        note.sendKeys("pulsa nomor im3");
+        driver.hideKeyboard();
+        delay(5);
+        MobileElement save = driver.findElementById("com.chad.financialrecord:id/btSave");
+        save.click();
+        delay(5);
+        MobileElement title = driver.findElementById("com.chad.financialrecord:id/btDate");
+        String actualResult = title.getText();
+        String expectedResult = "Jun 2023";
+        Assert.assertEquals(actualResult, expectedResult);
+        System.out.println("Tambah data pengeluaran berhasil");
+    }
     public void delay(int second) {
         try {
             Thread.sleep(second*1000);
